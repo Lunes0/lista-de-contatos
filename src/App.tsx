@@ -1,19 +1,25 @@
-import { useState } from 'react'
-import { getInitialTheme, type ThemeMode } from './theme'
-import GlobalStyle from './Global'
+import { Link, Route, Routes } from 'react-router-dom'
+import GlobalStyle, { Container } from './Global'
+import ContactListPage from './pages/ContactListPage'
+import AddContactPage from './pages/AddContactPage'
 
 function App() {
-  const [theme, setTheme] = useState<ThemeMode>(getInitialTheme())
-
-  function toggleTheme() {
-    const newTheme = theme === 'light' ? 'dark' : 'light'
-    setTheme(newTheme)
-    localStorage.setItem('theme', newTheme)
-  }
-
   return (
     <>
       <GlobalStyle />
+      <Container>
+        <header>
+          <nav>
+            <Link to="/">Ver Contatos</Link> |{' '}
+            <Link to="/add">Adicionar Contato</Link>
+            <h1>Contatos</h1>
+          </nav>
+        </header>
+        <Routes>
+          <Route path="/" element={<ContactListPage />} />
+          <Route path="/add" element={<AddContactPage />} />
+        </Routes>
+      </Container>
     </>
   )
 }
