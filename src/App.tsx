@@ -10,7 +10,6 @@ function App() {
       <Container>
         <header>
           <nav>
-            <Link to="/">Ver Contatos</Link> |{' '}
             <Link to="/add">Adicionar Contato</Link>
             <h1>Contatos</h1>
           </nav>
