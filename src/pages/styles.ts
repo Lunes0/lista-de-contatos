@@ -105,3 +105,16 @@ export const ButtonCard = styled(Button)`
   align-self: flex-end;
   float: right;
 `
+
+export const FormContct = styled.form`
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  input {
+    padding: 8px;
+    border-radius: 12px;
+    border: none;
+    font-size: 16px;
+  }
+`

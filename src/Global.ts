@@ -28,8 +28,14 @@ export const Container = styled.div`
   }
 
   h1 {
-    font-size: 40px;
+    font-size: 48px;
     margin-bottom: 24px;
+  }
+
+  h2 {
+    font-size: 28px;
+    margin-bottom: 24px;
+    margin-top: 62px;
   }
 
   @media (max-width: 768px) {
@@ -39,6 +45,7 @@ export const Container = styled.div`
 `
 
 export const Button = styled.button`
+  font-size: 16px;
   color: ${({ theme }) => theme.color};
   padding: 8px;
   border-radius: 12px;

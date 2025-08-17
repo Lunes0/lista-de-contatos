@@ -12,7 +12,7 @@ export default function EditContactPage() {
 
   return (
     <div>
-      <h1>Editar Contato</h1>
+      <h2>Editar Contato</h2>
       <ContactForm editing={contact} onFinish={() => navigate('/')} />
     </div>
   )

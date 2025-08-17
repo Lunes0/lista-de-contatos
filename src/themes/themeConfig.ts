@@ -13,7 +13,7 @@ declare module 'styled-components' {
 }
 
 export const lightTheme = {
-  background: '#f7f7f7',
+  background: '#eeececff',
   color: '#222',
   shadow: 'rgba(0, 0, 0, 0.15)',
   buttonColor: '#222',
@@ -23,11 +23,11 @@ export const lightTheme = {
 }
 
 export const darkTheme = {
-  background: '#242424',
+  background: '#242424ff',
   color: '#fff',
   shadow: 'rgba(0, 0, 0, 0.5)',
   buttonColor: '#fff',
-  buttonBackgorund: '#2b2b2bff',
+  buttonBackgorund: '#272727ff',
   ButtonColorHover: '#222',
   ButtonBackground: '#f5f5f5ff'
 }

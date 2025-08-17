@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react'
 import { useAppDispatch } from '../hooks'
 import { addContact, updateContact } from '../store/slices'
 import type { Contact } from '../store/slices'
-import { useNavigate } from 'react-router-dom'
+import { Button } from '../Global'
+import { FormContct } from '../pages/styles'
 
 type Props = {
   editing?: Contact | null
@@ -11,7 +12,6 @@ type Props = {
 
 export default function ContactForm({ editing = null, onFinish }: Props) {
   const dispatch = useAppDispatch()
-  const navigate = useNavigate()
 
   function maskPhone(value: string) {
     value = value.replace(/\D/g, '')
@@ -89,7 +89,7 @@ export default function ContactForm({ editing = null, onFinish }: Props) {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <FormContct as="form" onSubmit={handleSubmit}>
         <input
           placeholder="Nome"
           value={name}
@@ -107,14 +107,13 @@ export default function ContactForm({ editing = null, onFinish }: Props) {
         />
         <input type="file" accept="image/*" onChange={handleImageUpload} />
         {image && <img src={image} alt="Prévia" width={50} />}
-        <button type="submit">{editing ? 'Atualizar' : 'Adicionar'}</button>
+        <Button type="submit">{editing ? 'Atualizar' : 'Adicionar'}</Button>
         {editing && (
-          <button type="button" onClick={() => onFinish && onFinish()}>
+          <Button type="button" onClick={() => onFinish && onFinish()}>
             Cancelar
-          </button>
+          </Button>
         )}
-      </form>
-      <button onClick={() => navigate('/')}>Cancelar</button>
+      </FormContct>
     </>
   )
 }
